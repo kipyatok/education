@@ -8,22 +8,22 @@ public class Primitive {
 
     // TODO Вернуть сумму двух чисел
     public static int sum(int a, int b) {
-        return 0;
+        return a + b;
     }
 
     // TODO Вернуть разность двух чисел
     public static double sub(double a, double b) {
-        return 0;
+        return a - b;
     }
 
     // TODO Вернут сумму двух чисел, но вернуть надо int
     public static int sumNumber(double a, double b) {
-        return 0;
+        return (int) (a + b);
     }
 
     //TODO Вернуть что число является четным, математическим способом
     public static boolean isEven(int number) {
-        return false;
+        return number %2 == 0 ? true : false;
     }
 
     //TODO Реализуйте метод, который возвращает букву, стоящую в таблице UNICODE после символа "\" (обратный слэш) на расстоянии a
@@ -33,7 +33,7 @@ public class Primitive {
 
     //TODO Вернуть последнию цифру от числа
     public static int lastNumber(int number) {
-        return 0;
+        return number % 10;
     }
 
     //TODO Реализовать метод возращения суммы трехзначного числа, на вход подается всегда трехзначное число
