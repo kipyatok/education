@@ -24,7 +24,7 @@ public class Primitive {
     //TODO Вернуть что число является четным, математическим способом
     public static boolean isEven(int number) {
         return number %2 == 0 ? true : false;
-    }
+    } //FIXME remove true : false , == - logic operation. Space!
 
     //TODO Реализуйте метод, который возвращает букву, стоящую в таблице UNICODE после символа "\" (обратный слэш) на расстоянии a
     public static char symbol(int number) {
