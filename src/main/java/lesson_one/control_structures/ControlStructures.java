@@ -1,7 +1,11 @@
 package lesson_one.control_structures;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.math.BigInteger;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ControlStructures {
 
     //todo Реализовать метод возращающий максимальное число, если числа равны вернуть -1, использовать if
