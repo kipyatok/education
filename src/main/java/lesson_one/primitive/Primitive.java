@@ -28,7 +28,7 @@ public class Primitive {
 
     //TODO Реализуйте метод, который возвращает букву, стоящую в таблице UNICODE после символа "\" (обратный слэш) на расстоянии a
     public static char symbol(int number) {
-        return (char) (92 + number);
+        return (char) (92 + number); //FIXME use '\\'
     }
 
     //TODO Вернуть последнию цифру от числа
