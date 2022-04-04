@@ -1,5 +1,7 @@
 package lesson_one.classes_wrap;
 
+import static java.lang.Double.compare;
+
 //Todo Использовать только методы классов оберток!
 public class Wrap {
 
@@ -30,7 +32,7 @@ public class Wrap {
 
     //Todo Реализовать методо сравнения двух вещественных чисел, использую Double
     public static int comparison(double a, double b) {
-        return 0;
+        return compare(a, b);
     }
 
 }
