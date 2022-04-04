@@ -27,7 +27,7 @@ public class Wrap {
 
     //Todo Реализуйте метод, проверяющий, является ли заданное число по абсолютной величине степенью двойки.Использовать методы Integer
     public static boolean isPowerOfTwo(int value) {
-        return false;
+        return Integer.bitCount(Math.abs(value)) == 1;
     }
 
     //Todo Реализовать методо сравнения двух вещественных чисел, использую Double
