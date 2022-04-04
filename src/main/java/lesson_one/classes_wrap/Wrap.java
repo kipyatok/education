@@ -20,7 +20,7 @@ public class Wrap {
 
     //Todo Реализовать метод проверяющий что данный символ буква
     public static boolean isLetter(char symbol) {
-        return false;
+        return Character.isLetter(symbol);
     }
 
     //Todo Реализуйте метод, проверяющий, является ли заданное число по абсолютной величине степенью двойки.Использовать методы Integer
