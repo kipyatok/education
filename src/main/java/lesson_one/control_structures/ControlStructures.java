@@ -10,7 +10,15 @@ public class ControlStructures {
 
     //todo Реализовать метод возращающий максимальное число, если числа равны вернуть -1, использовать if
     public static int max(int a, int b) {
-        return 0;
+        if (a == b){
+            return -1;
+        }
+        if (a > b){
+            return a;
+        }
+        else {
+            return b;
+        }
     }
 
     /*todo Реализовать метод который будет возращать полное название странны
