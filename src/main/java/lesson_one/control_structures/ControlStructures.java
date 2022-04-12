@@ -66,6 +66,11 @@ public class ControlStructures {
 
     //todo Реализовать метод вычисления факториала, число на выходе может быть больше размерности int
     public static BigInteger factorial(int value) {
-        return BigInteger.ONE;
+        BigInteger x = new BigInteger("1");
+        for (int i = 1; i <= value; i++){
+            BigInteger j = new BigInteger(String.valueOf(i));
+            x = x.multiply(j);
+        }
+        return x;
     }
 }
