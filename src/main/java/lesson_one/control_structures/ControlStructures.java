@@ -54,7 +54,14 @@ public class ControlStructures {
         "n овца..."
      */
     public static void countingSheep(int n) {
-        // You code
+        if ( n < 0){
+            System.out.print("Овцы так не считаются\n");
+        }
+        else {
+            for (int i = 1; i <= n; i++) {
+                System.out.print(i + " овца...\n");
+            }
+        }
     }
 
     //todo Реализовать метод вычисления факториала, число на выходе может быть больше размерности int
