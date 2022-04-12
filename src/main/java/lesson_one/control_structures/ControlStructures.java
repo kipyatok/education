@@ -28,7 +28,16 @@ public class ControlStructures {
         Использовать Switch
      */
     public static String fullNameCountry(String country) {
-        return null;
+        switch (country){
+            case "RU":
+                return "Russia";
+            case "IT":
+                return "Italy";
+            case "DE":
+                return "Germany";
+            default:
+                return "Not country";
+        }
     }
 
     //todo Реализовать метод который переворачить число используя цикл while
