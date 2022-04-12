@@ -2,15 +2,9 @@ package lesson_one.control_structures;
 
 import com.google.common.math.BigIntegerMath;
 import lesson_one.LessonOneHelper;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
