@@ -2,30 +2,30 @@ package lesson_one.classes_wrap;
 
 import static java.lang.Double.compare;
 
-//Todo Использовать только методы классов оберток!
+/** Использовать только методы классов оберток! */
 public class Wrap {
 
-    // Todo реализовать метод упаковки примитива в класс Integer
+    /** Реализовать метод упаковки примитива в класс Integer */
     public static Integer boxing(int number) {
         return number * 1;
     }
 
-    //Todo реализовать метод перевода строки в число, используя методы Integer
+    /** Реализовать метод перевода строки в число, используя методы Integer */
     public static Integer stringToInteger(String number) {
         return Integer.parseInt(number);
     }
 
-    //Todo Реализовать метод возращающий максимольное значение int
+    /** Реализовать метод возращающий максимольное значение int */
     public static int maxInt() {
         return Integer.MAX_VALUE;
     }
 
-    //Todo Реализовать метод проверяющий что данный символ буква
+    /** Реализовать метод проверяющий что данный символ буква */
     public static boolean isLetter(char symbol) {
         return Character.isLetter(symbol);
     }
 
-    //Todo Реализуйте метод, проверяющий, является ли заданное число по абсолютной величине степенью двойки.Использовать методы Integer
+    /** Реализуйте метод, проверяющий, является ли заданное число по абсолютной величине степенью двойки.Использовать методы Integer */
     public static boolean isPowerOfTwo(int value) {
         return Integer.bitCount(Math.abs(value)) == 1;
     }
