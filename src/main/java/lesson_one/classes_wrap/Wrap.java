@@ -1,29 +1,29 @@
 package lesson_one.classes_wrap;
 
-//Todo Использовать только методы классов оберток!
+/** Использовать только методы классов оберток! */
 public class Wrap {
 
-    // Todo реализовать метод упаковки примитива в класс Integer
+    /** Реализовать метод упаковки примитива в класс Integer */
     public static Integer boxing(int number) {
         return null;
     }
 
-    //Todo реализовать метод перевода строки в число, используя методы Integer
+    /** Реализовать метод перевода строки в число, используя методы Integer */
     public static Integer stringToInteger(String number) {
         return null;
     }
 
-    //Todo Реализовать метод возращающий максимольное значение int
+    /** Реализовать метод возращающий максимольное значение int */
     public static int maxInt() {
         return 0;
     }
 
-    //Todo Реализовать метод проверяющий что данный символ буква
+    /** Реализовать метод проверяющий что данный символ буква */
     public static boolean isLetter(char symbol) {
         return false;
     }
 
-    //Todo Реализуйте метод, проверяющий, является ли заданное число по абсолютной величине степенью двойки.Использовать методы Integer
+    /** Реализуйте метод, проверяющий, является ли заданное число по абсолютной величине степенью двойки.Использовать методы Integer */
     public static boolean isPowerOfTwo(int value) {
         return false;
     }
