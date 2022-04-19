@@ -3,6 +3,8 @@ package lesson_one.arrays;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ArraysLesson {
 
@@ -21,7 +23,29 @@ public class ArraysLesson {
 
      */
     public static void bringToTheScreenArrays(int[] arrays) {
-        // You code
+        int[] xyz = {};
+        if(Arrays.equals(arrays, xyz)){
+            System.out.print("Пустой массив\n");
+            return;
+        }
+        boolean chek = true;
+        for (int i = 0; i < arrays.length; i++) {
+            if (arrays[i] >= 0){
+                chek = false;
+            }
+            if (chek == false){
+                break;
+            }
+        }
+        if (chek == true){
+            System.out.print("Массив отрицательный\n");
+            return;
+        }
+        for (int i = 0; i < arrays.length; i++) {
+            if (arrays[i] >= 0){
+                System.out.print(arrays[i] + "\n");
+            }
+        }
     }
 
     /*TODO Реализовать метод возравщающий массив без дупликатов в нем, при пустом массиве вернуть пустой массив
@@ -35,7 +59,8 @@ public class ArraysLesson {
 
     //TODO Найти максимальное число в массиве, массив не отсортирован, на вход подаются не пустые массивы
     public static int maxNumberInArrays(int[] arrays) {
-        return 0;
+        Arrays.sort(arrays);
+        return arrays[arrays.length - 1];
     }
 
     //TODO Реализовать метод умножения 2х матриц
