@@ -48,14 +48,24 @@ public class ArraysLesson {
         }
     }
 
+
+
+
+
     /** Реализовать метод возравщающий массив без дупликатов в нем, при пустом массиве вернуть пустой массив
        Примеры
        in: {1, 1, 2, 2, 3, 4} out: {1, 2, 3, 4}
        in: {} out: {}
      */
     public static int[] notDuplicateArrays(int[] arrays) {
+
         return null;
     }
+
+
+
+
+
 
     /** Найти максимальное число в массиве, массив не отсортирован, на вход подаются не пустые массивы */
     public static int maxNumberInArrays(int[] arrays) {
@@ -65,7 +75,15 @@ public class ArraysLesson {
 
     /** Реализовать метод умножения 2х матриц */
     public static int[][] matrixMulti(int[][] one, int[][] two) {
-        return null;
+        int[][] result = new int[one.length][two[0].length];
+        for (int i = 0; i < result[0].length; i++) {
+            for (int j = 0; j < result.length; j++) {
+                for (int k = 0; k < one[0].length; k++) {
+                    result[i][j] = result[i][j] + one[i][k] * two[k][j];
+                }
+            }
+        }
+        return result;
     }
 
     /** реализовать метод быстрой сортиролвки через рекурсию
