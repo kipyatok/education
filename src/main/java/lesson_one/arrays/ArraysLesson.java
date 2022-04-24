@@ -58,8 +58,25 @@ public class ArraysLesson {
        in: {} out: {}
      */
     public static int[] notDuplicateArrays(int[] arrays) {
-
-        return null;
+            int n = arrays.length;
+        for (int i = 0, m = 0; i != n; i++, n = m) {
+            for (int j = m = i + 1; j != n; j++) {
+                if (arrays[j] != arrays[i]){
+                    if (m != j){
+                        arrays[m] = arrays[j];
+                    }
+                    m++;
+                }
+            }
+        }
+        if (n != arrays.length){
+            int[] b = new int[n];
+            for (int i = 0; i < n; i++) {
+                b[i] = arrays[i];
+            }
+            arrays = b;
+        }
+        return arrays;
     }
 
 
