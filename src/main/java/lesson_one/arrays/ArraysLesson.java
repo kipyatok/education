@@ -86,8 +86,13 @@ public class ArraysLesson {
 
     /** Найти максимальное число в массиве, массив не отсортирован, на вход подаются не пустые массивы */
     public static int maxNumberInArrays(int[] arrays) {
-        Arrays.sort(arrays);
-        return arrays[arrays.length - 1];
+        int max = arrays[0];
+        for (int i = 1; i < arrays.length - 1; i++) {
+            if (arrays[i] > max){
+                max = arrays[i];
+            }
+        }
+        return max;
     }
 
     /** Реализовать метод умножения 2х матриц */

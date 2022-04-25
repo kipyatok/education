@@ -3,6 +3,9 @@ package lesson_one.string_lesson;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class StringLesson {
 
@@ -19,8 +22,17 @@ public class StringLesson {
      в классе String есть методы для преобразования всей строки в верхний и нижний регистр.
      */
     public static boolean isPalindrome(String text) {
-        return false;
+        String result = text.replaceAll("[^a-zA-Z0-9]", "");
+        String reverse = new StringBuilder(result).reverse().toString();
+        return result.equalsIgnoreCase(reverse);
     }
+    /**
+    Pattern p = Pattern.compile("[^a-zA-Z0-9]");
+    Matcher m = p.matcher(text);
+    String result = m.replaceAll("");
+    String reverse = new StringBuilder(result).reverse().toString();
+        return result.equalsIgnoreCase(reverse);
+     /**
 
     /**
      * Вам дан список ролей и сценарий пьесы в виде массива строчек.
