@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import java.util.Arrays;
+import java.util.Random;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ArraysLesson {
@@ -111,6 +112,44 @@ public class ArraysLesson {
     /** реализовать метод быстрой сортиролвки через рекурсию
     //Не совсем про массивы но рекурсию тоже надо знать */
     public static int[] fastSort(int[] arrays) {
-        return null;
+        if ((arrays.length == 0) || (arrays.length == 1)){
+            return arrays;
+        }
+        quickSort(arrays, 0,arrays.length - 1);
+        return arrays;
     }
+
+    public static void quickSort(int[] arrays, int left, int right) {
+        int l = left;
+        int r = right;
+        int opora = arrays[left];
+        while (left < right) {
+            while ((arrays[right] >= opora) && (left < right)) {
+                right--;
+            }
+            if (left != right) {
+                arrays[left] = arrays[right];
+                left++;
+            }
+            while ((arrays[left] <= opora) && (left < right)) {
+                left++;
+            }
+            if (left != right) {
+                arrays[right] = arrays[left];
+                right--;
+            }
+        }
+        arrays[left] = opora;
+        opora = left;
+        left = l;
+        right = r;
+        if (left < opora) {
+            quickSort(arrays, left, opora - 1);
+        }
+        if (right > opora){
+            quickSort(arrays, opora + 1, right);
+        }
+    }
+
+
 }

@@ -97,6 +97,9 @@ public class StringLesson {
      */
 
     public static String printTextPerRole(String[] roles, String[] textLines) {
+
+
+
         return null;
     }
 }

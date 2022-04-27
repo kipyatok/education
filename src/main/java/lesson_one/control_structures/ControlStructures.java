@@ -42,7 +42,13 @@ public class ControlStructures {
 
     /** Реализовать метод который переворачить число используя цикл while */
     public static int reverse(int number) {
-        return 0;
+        int rev = 0;
+        while (number != 0) {
+            int temp = number % 10;
+            rev = rev * 10 + temp;
+            number /= 10;
+        }
+        return rev;
     }
 
     /** Реализовать метод который будет считать овец
