@@ -34,6 +34,8 @@ public class StringLesson {
         return result.equalsIgnoreCase(reverse);
      /**
 
+
+
     /**
      * Вам дан список ролей и сценарий пьесы в виде массива строчек.
      *
@@ -97,9 +99,29 @@ public class StringLesson {
      */
 
     public static String printTextPerRole(String[] roles, String[] textLines) {
-
-
-
-        return null;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < roles.length; i++) {
+            String rol = roles[i] + ":";
+            result.append(rol + "\n");
+            for (int j = 0; j < textLines.length; j++) {
+                if(textLines[j].indexOf(rol) == 0){
+                    result.append(textLines[j].replaceFirst(rol, (j + 1) + ")"));
+                    result.append("\n");
+                }
+            }
+            result.append("\n");
+        }
+       return result.toString();
     }
+    /**
+    StringBuilder result = new StringBuilder();
+        for (int i = 0; i < roles.length; i++) {
+        String rol = roles[i] + ":\n";
+        result.append(rol);
+        for (int j = 0; j < textLines.length; j++) {
+            if (textLines[j].indexOf(rol) == 0);
+            result.append(textLines[j].replaceFirst(rol, j + ")"));
+        }
+        result.append("\n");
+     **/
 }
