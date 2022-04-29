@@ -8,7 +8,7 @@ public class Primitive {
 
     /** Вернуть сумму двух чисел */
     public static int sum(int a, int b) {
-        return 0;
+        return a+b;
     }
 
     /** Вернуть разность двух чисел */
