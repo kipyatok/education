@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class ArraysLesson {
+public class ArraysLesson { //FIXME refactor code
 
-    /** реализовать методо который будет выводить все положительные числа на экран, при пустом массиве вывести "Пустой массив"
+    /** реализовать метод который будет выводить все положительные числа на экран, при пустом массиве вывести "Пустой массив"
        При польностью отрицательных числах вывести "Массив отрицательный"
        Пример:
        in: {-1, 2, 3, -5}
@@ -24,26 +24,27 @@ public class ArraysLesson {
 
      */
     public static void bringToTheScreenArrays(int[] arrays) {
-        int[] xyz = {};
+        int[] xyz = {}; //FIXME rename. maybe emptyArray
         if(Arrays.equals(arrays, xyz)){
             System.out.print("Пустой массив\n");
             return;
         }
         boolean chek = true;
         for (int i = 0; i < arrays.length; i++) {
-            if (arrays[i] >= 0){
+            if (arrays[i] >= 0){ //FIXME
                 chek = false;
             }
-            if (chek == false){
+            if (chek == false){ //fixme error
                 break;
             }
         }
-        if (chek == true){
+        if (chek == true){ //FIXME error
             System.out.print("Массив отрицательный\n");
             return;
         }
+        //Arrays.toString()
         for (int i = 0; i < arrays.length; i++) {
-            if (arrays[i] >= 0){
+            if (arrays[i] >= 0){ //fixme duclication code
                 System.out.print(arrays[i] + "\n");
             }
         }
@@ -119,7 +120,7 @@ public class ArraysLesson {
         return arrays;
     }
 
-    public static void quickSort(int[] arrays, int left, int right) {
+    private static void quickSort(int[] arrays, int left, int right) {
         int l = left;
         int r = right;
         int opora = arrays[left];

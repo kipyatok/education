@@ -3,9 +3,6 @@ package lesson_one.string_lesson;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class StringLesson {
 
@@ -26,15 +23,6 @@ public class StringLesson {
         String reverse = new StringBuilder(result).reverse().toString();
         return result.equalsIgnoreCase(reverse);
     }
-    /**
-    Pattern p = Pattern.compile("[^a-zA-Z0-9]");
-    Matcher m = p.matcher(text);
-    String result = m.replaceAll("");
-    String reverse = new StringBuilder(result).reverse().toString();
-        return result.equalsIgnoreCase(reverse);
-     /**
-
-
 
     /**
      * Вам дан список ролей и сценарий пьесы в виде массива строчек.
@@ -101,10 +89,10 @@ public class StringLesson {
     public static String printTextPerRole(String[] roles, String[] textLines) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < roles.length; i++) {
-            String rol = roles[i] + ":";
-            result.append(rol + "\n");
+            String rol = roles[i] + ":"; // fixme append
+            result.append(rol + "\n"); //fixme слипание строк
             for (int j = 0; j < textLines.length; j++) {
-                if(textLines[j].indexOf(rol) == 0){
+                if(textLines[j].indexOf(rol) == 0){ //textLines[i].startsWith()
                     result.append(textLines[j].replaceFirst(rol, (j + 1) + ")"));
                     result.append("\n");
                 }

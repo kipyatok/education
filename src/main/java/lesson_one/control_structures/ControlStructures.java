@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigInteger;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class ControlStructures {
+public class ControlStructures { //fixme reformate code
 
     /** Реализовать метод возращающий максимальное число, если числа равны вернуть -1, использовать if */
     public static int max(int a, int b) {
@@ -27,7 +27,7 @@ public class ControlStructures {
         Список стран для метода (RU, IT, DE)
         Использовать Switch
      */
-    public static String fullNameCountry(String country) {
+    public static String fullNameCountry(String country) { //FIXME break
         switch (country){
             case "RU":
                 return "Russia";
@@ -61,7 +61,7 @@ public class ControlStructures {
      */
     public static void countingSheep(int n) {
         if ( n < 0){
-            System.out.print("Овцы так не считаются\n");
+            System.out.print("Овцы так не считаются\n"); //FIXME println
         }
         else {
             for (int i = 1; i <= n; i++) {
@@ -72,9 +72,9 @@ public class ControlStructures {
 
     /** Реализовать метод вычисления факториала, число на выходе может быть больше размерности int */
     public static BigInteger factorial(int value) {
-        BigInteger x = new BigInteger("1");
+        BigInteger x = new BigInteger("1"); // FIXME constant
         for (int i = 1; i <= value; i++){
-            BigInteger j = new BigInteger(String.valueOf(i));
+            BigInteger j = new BigInteger(String.valueOf(i)); // valueOf
             x = x.multiply(j);
         }
         return x;

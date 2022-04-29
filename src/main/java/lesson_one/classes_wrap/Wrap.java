@@ -8,7 +8,7 @@ public class Wrap {
     /** Реализовать метод упаковки примитива в класс Integer */
     public static Integer boxing(int number) {
         return number * 1;
-    }
+    } //FIXME valueOf
 
     /** Реализовать метод перевода строки в число, используя методы Integer */
     public static Integer stringToInteger(String number) {
@@ -30,7 +30,7 @@ public class Wrap {
         return Integer.bitCount(Math.abs(value)) == 1;
     }
 
-    //Todo Реализовать методо сравнения двух вещественных чисел, использую Double
+    /** Реализовать методо сравнения двух вещественных чисел, использую Double */
     public static int comparison(double a, double b) {
         return compare(a, b);
     }
