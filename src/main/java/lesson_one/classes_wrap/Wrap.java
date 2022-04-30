@@ -28,7 +28,7 @@ public class Wrap {
         return false;
     }
 
-    //Todo Реализовать методо сравнения двух вещественных чисел, использую Double
+    /** Реализовать методо сравнения двух вещественных чисел, использую Double */
     public static int comparison(double a, double b) {
         return 0;
     }
