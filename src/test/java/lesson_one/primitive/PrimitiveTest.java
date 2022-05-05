@@ -24,6 +24,7 @@ public class PrimitiveTest {
     public void testSumNumber() {
         assertThat(Primitive.sumNumber(1.23, 5.32)).isEqualTo(6);
         assertThat(Primitive.sumNumber(-3.01D, -5.001)).isEqualTo(-8);
+        assertThat(Primitive.sumNumber(2.9, 2.1)).isEqualTo(5);
     }
 
     @Test
