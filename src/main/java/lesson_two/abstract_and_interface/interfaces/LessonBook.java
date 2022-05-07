@@ -11,16 +11,18 @@ package lesson_two.abstract_and_interface.interfaces;
  * Если ничего не нашлось то возвращем для int -1, для String "";
  */
 public class LessonBook implements Book {
-    String book[];
+    private String book[];
 
     @Override
     public int sizeBook() {
         return book.length;
     }
+
     @Override
     public String textByPage(int page) {
         return book[page];
     }
+
     @Override
     public String textByRange(int start, int end) {
         StringBuilder result = new StringBuilder();
@@ -29,25 +31,35 @@ public class LessonBook implements Book {
         }
         return result.toString();
     }
+
     @Override
     public int findPageByText(String text) {
-
-        return 0;
+        for (int i = 0; i < book.length; i++) {
+            if (book[i].indexOf(text) > -1) {
+                return i;
+            }
+        }
+        return -1;
     }
+
     @Override
     public String text() {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i <= book.length; i++) {
             result.append(book[i]);
         }
-            return result.toString();
+        return result.toString();
 
     }
 
-    LessonBook(String[] book){
+    public LessonBook(String[] book) {
         this.book = book;
     }
 
+    public LessonBook() {
+    }
+
+    public void setBook(String[] book) {
+        this.book = book;
+    }
 }
-
-

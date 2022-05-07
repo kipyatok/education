@@ -25,23 +25,23 @@ public class LessonBookTest {
 
         String range = harryPotter[1] + harryPotter[2];
 
-//        Book test = new LessonBook(harryPotter);
-//
-//        assertThat(test.sizeBook()).isEqualTo(4);
-//
-//        assertThat(test.textByPage(2)).isEqualTo(harryPotter[2]);
-//
-//        assertThat(test.textByPage(10)).isEmpty();
-//
-//        assertThat(test.textByRange(1, 2)).isEqualTo(range);
-//
-//        assertThat(test.textByRange(5, 20)).isEmpty();
-//
-//        assertThat(test.findPageByText("Professor McGonagall")).isEqualTo(1);
-//
-//        assertThat(test.findPageByText("NOT_FOUND")).isEqualTo(-1);
-//
-//        assertThat(test.text()).isEqualTo(String.join("", harryPotter));
+       Book test = new LessonBook(harryPotter);
+
+        assertThat(test.sizeBook()).isEqualTo(4);
+
+        assertThat(test.textByPage(2)).isEqualTo(harryPotter[2]);
+
+        assertThat(test.textByPage(10)).isEmpty();
+
+        assertThat(test.textByRange(1, 2)).isEqualTo(range);
+
+        assertThat(test.textByRange(5, 20)).isEmpty();
+
+        assertThat(test.findPageByText("Professor McGonagall")).isEqualTo(1);
+
+        assertThat(test.findPageByText("NOT_FOUND")).isEqualTo(-1);
+
+        assertThat(test.text()).isEqualTo(String.join("", harryPotter));
     }
 
 }
