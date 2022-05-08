@@ -18,17 +18,22 @@ public class ArraysLessonTest {
     public void testBringToTheScreenArrays() {
         int[] normalArray = {-1, -2, -3, 100, 200, -15, -23, 666, 0};
         ArraysLesson.bringToTheScreenArrays(normalArray);
-        assertThat(systemOutRule.getLog()).isEqualTo("100\n200\n666\n0\n");
+        assertThat(systemOutRule.getLog()).contains("100", "200", "666", "0");
         systemOutRule.clearLog();
 
         int[] negativeArray = {-1, -2, -3};
         ArraysLesson.bringToTheScreenArrays(negativeArray);
-        assertThat(systemOutRule.getLog()).isEqualTo("Массив отрицательный\n");
+        assertThat(systemOutRule.getLog()).contains("Массив отрицательный");
+        systemOutRule.clearLog();
+
+        int[] oneArrayElement = {2};
+        ArraysLesson.bringToTheScreenArrays(oneArrayElement);
+        assertThat(systemOutRule.getLog()).contains("2");
         systemOutRule.clearLog();
 
         int[] emptyArray = {};
         ArraysLesson.bringToTheScreenArrays(emptyArray);
-        assertThat(systemOutRule.getLog()).isEqualTo("Пустой массив\n");
+        assertThat(systemOutRule.getLog()).contains("Пустой массив");
         systemOutRule.clearLog();
     }
 
