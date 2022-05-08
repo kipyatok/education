@@ -25,7 +25,7 @@ public class ArraysLesson {
     public static void bringToTheScreenArrays(int[] arrays) {
         int[] empty = {};
         if (Arrays.equals(arrays, empty)) { // fixme use length
-            System.out.print("Пустой массив\n"); //такой перенос требует тест / // fixme use println
+            System.out.print("Пустой массив"); //такой перенос требует тест / // fixme use println
             return;
         }
         boolean chek = true;
