@@ -7,8 +7,8 @@ public class Wrap {
 
     /** Реализовать метод упаковки примитива в класс Integer */
     public static Integer boxing(int number) {
-        return number * 1;
-    } //FIXME valueOf
+        return Integer.valueOf(number);
+    }
 
     /** Реализовать метод перевода строки в число, используя методы Integer */
     public static Integer stringToInteger(String number) {

@@ -1,4 +1,4 @@
-package lesson_one.arrays;
+package lesson_one.classes_wrap.arrays;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

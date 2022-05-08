@@ -20,11 +20,18 @@ public class LessonBook implements Book {
 
     @Override
     public String textByPage(int page) {
+        if ((page >= book.length) || (page < 0)) {
+            return "";
+        }
         return book[page];
     }
 
     @Override
     public String textByRange(int start, int end) {
+        if ((start > book.length) || (start < 0) || (start > end) || (end < 0) || (end > book.length)) {
+            return "";
+        }
+
         StringBuilder result = new StringBuilder();
         for (int i = start; i <= end; i++) {
             result.append(book[i]);
@@ -44,8 +51,12 @@ public class LessonBook implements Book {
 
     @Override
     public String text() {
+        if (book.length < 1) {
+            return "";
+        }
+
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i <= book.length; i++) {
+        for (int i = 0; i < book.length; i++) {
             result.append(book[i]);
         }
         return result.toString();
