@@ -1,8 +1,12 @@
 package lesson_one.classes_wrap;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import static java.lang.Double.compare;
 
 /** Использовать только методы классов оберток! */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Wrap {
 
     /** Реализовать метод упаковки примитива в класс Integer */

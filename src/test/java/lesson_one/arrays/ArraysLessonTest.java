@@ -1,7 +1,6 @@
 package lesson_one.arrays;
 
 import lesson_one.LessonOneHelper;
-import lesson_one.classes_wrap.arrays.ArraysLesson;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;

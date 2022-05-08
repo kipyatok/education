@@ -1,10 +1,9 @@
-package lesson_one.classes_wrap.arrays;
+package lesson_one.arrays;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import java.util.Arrays;
-import java.util.Random;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ArraysLesson {
@@ -25,24 +24,23 @@ public class ArraysLesson {
      */
     public static void bringToTheScreenArrays(int[] arrays) {
         int[] empty = {};
-        if (Arrays.equals(arrays, empty)) {
-            System.out.print("Пустой массив\n"); //такой перенос требует тест
+        if (Arrays.equals(arrays, empty)) { // fixme use length
+            System.out.print("Пустой массив\n"); //такой перенос требует тест / // fixme use println
             return;
         }
         boolean chek = true;
         for (int i = 0; i < arrays.length; i++) {
-            if (arrays[i] >= 0) {
+            if (arrays[i] >= 0) { //
                 chek = false;
             }
         }
         if (chek) {
-            System.out.print("Массив отрицательный\n"); //такой перенос требует тест
+            System.out.print("Массив отрицательный\n"); // fixme use println
             return;
         }
-        //Arrays.toString() - не подходит, под нужный для теста вывод
         for (int i = 0; i < arrays.length; i++) {
             if (arrays[i] >= 0) {
-                System.out.print(arrays[i] + "\n");
+                System.out.print(arrays[i] + "\n"); // fixme move to 33 line
             }
         }
     }
