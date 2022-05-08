@@ -63,42 +63,73 @@ import lombok.NoArgsConstructor;
 public class MoveRobot {
 
     public static void moveRobot(Robot robot, int toX, int toY) {
-        int howMuchUp = toY - robot.getY();
-        int howMuchRight = toX - robot.getX();
-        int howMuchDown = robot.getY() - toY;
-        int howMuchLeft = robot.getX() - toX;
-
         if (toX > robot.getX()) {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
-            for (int i = 0; i < howMuchRight; i++) {
-                robot.stepForward();
-            }
+            robot.stepForward();
         }
         if (toX < robot.getX()) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnRight();
             }
-            for (int i = 0; i < howMuchLeft; i++) {
-                robot.stepForward();
-            }
+            robot.stepForward();
         }
         if (toY > robot.getY()) {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
-            for (int i = 0; i < howMuchUp; i++) {
-                robot.stepForward();
-            }
+            robot.stepForward();
         }
         if (toY < robot.getY()) {
             while (robot.getDirection() != Direction.DOWN) {
                 robot.turnRight();
             }
-            for (int i = 0; i < howMuchDown; i++) {
-                robot.stepForward();
-            }
+            robot.stepForward();
+        }
+        if ((toX != robot.getX()) || (toY != robot.getY())) {
+            moveRobot(robot, toX, toY);
         }
     }
 }
+
+
+/**
+    int howMuchUp = toY - robot.getY();
+    int howMuchRight = toX - robot.getX();
+    int howMuchDown = robot.getY() - toY;
+    int howMuchLeft = robot.getX() - toX;
+
+        if (toX > robot.getX()) {
+                while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
+                }
+                for (int i = 0; i < howMuchRight; i++) {
+        robot.stepForward();
+        }
+        }
+        if (toX < robot.getX()) {
+        while (robot.getDirection() != Direction.LEFT) {
+        robot.turnRight();
+        }
+        for (int i = 0; i < howMuchLeft; i++) {
+        robot.stepForward();
+        }
+        }
+        if (toY > robot.getY()) {
+        while (robot.getDirection() != Direction.UP) {
+        robot.turnRight();
+        }
+        for (int i = 0; i < howMuchUp; i++) {
+        robot.stepForward();
+        }
+        }
+        if (toY < robot.getY()) {
+        while (robot.getDirection() != Direction.DOWN) {
+        robot.turnRight();
+        }
+        for (int i = 0; i < howMuchDown; i++) {
+        robot.stepForward();
+        }
+        }
+**/

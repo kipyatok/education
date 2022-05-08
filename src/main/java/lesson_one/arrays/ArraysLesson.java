@@ -23,7 +23,7 @@ public class ArraysLesson {
      * out: Пустой массив
      */
     public static void bringToTheScreenArrays(int[] arrays) {
-        if (arrays.length < 1) {
+        if (arrays.length == 0) {
             System.out.println("Пустой массив"); //такой перенос требует тест / // fixme use println
             return;
         }
