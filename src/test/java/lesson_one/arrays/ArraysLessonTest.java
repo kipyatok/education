@@ -18,17 +18,22 @@ public class ArraysLessonTest {
     public void testBringToTheScreenArrays() {
         int[] normalArray = {-1, -2, -3, 100, 200, -15, -23, 666, 0};
         ArraysLesson.bringToTheScreenArrays(normalArray);
-        assertThat(systemOutRule.getLog()).isEqualTo("100\n200\n666\n0\n");
+        assertThat(systemOutRule.getLog()).contains("100", "200", "666", "0");
         systemOutRule.clearLog();
 
         int[] negativeArray = {-1, -2, -3};
         ArraysLesson.bringToTheScreenArrays(negativeArray);
-        assertThat(systemOutRule.getLog()).isEqualTo("Массив отрицательный\n");
+        assertThat(systemOutRule.getLog()).contains("Массив отрицательный");
+        systemOutRule.clearLog();
+
+        int[] oneArrayElement = {2};
+        ArraysLesson.bringToTheScreenArrays(oneArrayElement);
+        assertThat(systemOutRule.getLog()).contains("2\n");
         systemOutRule.clearLog();
 
         int[] emptyArray = {};
         ArraysLesson.bringToTheScreenArrays(emptyArray);
-        assertThat(systemOutRule.getLog()).isEqualTo("Пустой массив\n");
+        assertThat(systemOutRule.getLog()).contains("Пустой массив");
         systemOutRule.clearLog();
     }
 
@@ -55,9 +60,9 @@ public class ArraysLessonTest {
 
     @Test
     public void testMatrixMulti() {
-        int[][] one = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        int[][] two = new int[][] {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
-        int[][] result = new int[][] {{30, 24, 18}, {84, 69, 54}, {138, 114, 90}};
+        int[][] one = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] two = new int[][]{{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
+        int[][] result = new int[][]{{30, 24, 18}, {84, 69, 54}, {138, 114, 90}};
 
         assertThat(ArraysLesson.matrixMulti(one, two)).isEqualTo(result);
     }
