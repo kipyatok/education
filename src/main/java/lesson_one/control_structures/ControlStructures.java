@@ -61,7 +61,7 @@ public class ControlStructures { //fixme reformate code
      */
     public static void countingSheep(int n) {
         if ( n < 0){
-            System.out.print("Овцы так не считаются\n"); //FIXME println
+            System.out.print("Овцы так не считаются\n"); //такой перенос требует тест
         }
         else {
             for (int i = 1; i <= n; i++) {
@@ -72,9 +72,9 @@ public class ControlStructures { //fixme reformate code
 
     /** Реализовать метод вычисления факториала, число на выходе может быть больше размерности int */
     public static BigInteger factorial(int value) {
-        BigInteger x = new BigInteger("1"); // FIXME constant
+        BigInteger x = BigInteger.ONE;
         for (int i = 1; i <= value; i++){
-            BigInteger j = new BigInteger(String.valueOf(i)); // valueOf
+            BigInteger j = new BigInteger(String.valueOf(i));
             x = x.multiply(j);
         }
         return x;

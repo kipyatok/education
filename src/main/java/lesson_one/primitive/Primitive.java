@@ -22,9 +22,7 @@ public class Primitive {
     }
 
     /** Вернуть что число является четным, математическим способом */
-    public static boolean isEven(int number) {
-        return number %2 == 0; //FIXME space
-    }
+    public static boolean isEven(int number) { return number % 2 == 0;  }
 
     /** Реализуйте метод, который возвращает букву, стоящую в таблице UNICODE после символа "\" (обратный слэш) на расстоянии a */
     public static char symbol(int number) {

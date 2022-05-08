@@ -89,27 +89,17 @@ public class StringLesson {
     public static String printTextPerRole(String[] roles, String[] textLines) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < roles.length; i++) {
-            String rol = roles[i] + ":"; // fixme append
-            result.append(rol + "\n"); //fixme слипание строк
+            String rol = roles[i] + ":";
+            result.append(rol);
+            result.append("\n");
             for (int j = 0; j < textLines.length; j++) {
-                if(textLines[j].indexOf(rol) == 0){ //textLines[i].startsWith()
+                if (textLines[j].startsWith(rol)) {
                     result.append(textLines[j].replaceFirst(rol, (j + 1) + ")"));
                     result.append("\n");
                 }
             }
             result.append("\n");
         }
-       return result.toString();
+        return result.toString();
     }
-    /**
-    StringBuilder result = new StringBuilder();
-        for (int i = 0; i < roles.length; i++) {
-        String rol = roles[i] + ":\n";
-        result.append(rol);
-        for (int j = 0; j < textLines.length; j++) {
-            if (textLines[j].indexOf(rol) == 0);
-            result.append(textLines[j].replaceFirst(rol, j + ")"));
-        }
-        result.append("\n");
-     **/
 }
