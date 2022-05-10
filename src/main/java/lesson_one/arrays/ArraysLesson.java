@@ -24,24 +24,23 @@ public class ArraysLesson {
      */
     public static void bringToTheScreenArrays(int[] arrays) {
         if (arrays.length == 0) {
-            System.out.println("Пустой массив"); //такой перенос требует тест / // fixme use println
+            System.out.println("Пустой массив");
             return;
         }
         boolean chek = true;
+        StringBuilder positive = new StringBuilder();
         for (int i = 0; i < arrays.length; i++) {
             if (arrays[i] >= 0) { //
                 chek = false;
+                positive.append(arrays[i] + "\n");
             }
         }
         if (chek) {
-            System.out.print("Массив отрицательный\n"); // fixme use println
+            System.out.println("Массив отрицательный");
             return;
         }
-        for (int i = 0; i < arrays.length; i++) {
-            if (arrays[i] >= 0) {
-                System.out.print(arrays[i] + "\n"); // fixme move to 33 line
-            }
-        }
+
+        System.out.print(positive);
     }
 
 
