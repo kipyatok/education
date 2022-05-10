@@ -88,8 +88,8 @@ public class StringLesson {
 
     public static String printTextPerRole(String[] roles, String[] textLines) {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < roles.length; i++) { // fixme maybe forech ?
-            String rol = roles[i] + ":"; // fixme use append
+        for (int i = 0; i < roles.length; i++) {
+            String rol = roles[i] + ":";
             result.append(rol);
             result.append("\n");
             for (int j = 0; j < textLines.length; j++) {

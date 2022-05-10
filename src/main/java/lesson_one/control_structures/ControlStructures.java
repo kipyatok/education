@@ -66,7 +66,7 @@ public class ControlStructures {
      */
     public static void countingSheep(int n) {
         if (n < 0) {
-            System.out.print("Овцы так не считаются\n"); //такой перенос требует тест // fixme use println
+            System.out.print("Овцы так не считаются\n");
         } else {
             for (int i = 1; i <= n; i++) {
                 System.out.print(i + " овца...\n");
