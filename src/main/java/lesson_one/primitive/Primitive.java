@@ -28,7 +28,7 @@ public class Primitive {
 
     /** Реализуйте метод, который возвращает букву, стоящую в таблице UNICODE после символа "\" (обратный слэш) на расстоянии a */
     public static char symbol(int number) {
-        return (char)('\\' + number)  ;
+        return (char) ('\\' + number); // fixme reformat code
     }
 
     /** Вернуть последнию цифру от числа */
@@ -38,7 +38,7 @@ public class Primitive {
 
     /** Реализовать метод возращения суммы трехзначного числа, на вход подается всегда трехзначное число */
     public static int sumExpression(int number) {
-        return (number / 100) + (number / 10 % 10) + (number%10);
+        return (number / 100) + (number / 10 % 10) + (number % 10); // fixme reformat code
     }
 
     /** Проверить что a+b=c, Допустимая погрешность – 0.0001, можно использовать Math */
@@ -51,7 +51,7 @@ public class Primitive {
         Чтоб легче понять смотри так же таблицу СДНФ
      */
     public static boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
-        return ((a ^ b) && (c ^ d)) || ((a ^ c) && (b ^ d)) || ((a ^ d) && (b ^ c));
+        return ((a ^ b) && (c ^ d)) || ((a ^ c) && (b ^ d)) || ((a ^ d) && (b ^ c)); //fixme
     }
 
 }
