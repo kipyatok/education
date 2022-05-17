@@ -9,7 +9,13 @@ package lesson_two.oop;
 public class Polymorphism {
 
     public static void main(String[] args) {
-        //You code
+        Cat tigra = new Cat("Тигра");
+        Dog flint = new Dog("Флинт");
+        tigra.setSlaveName("Даня");
+        flint.setMasterName("Сиёга");
+        tigra.Voice();
+        flint.Voice();
+        tigra.Master();
+        flint.Master();
     }
-
 }

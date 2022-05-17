@@ -1,6 +1,8 @@
 package lesson_two.object;
 
 
+import java.util.Objects;
+
 /**
  * Дан класс ComplexNumber. Переопределите в нем методы equals() и hashCode() так,
  * чтобы equals() сравнивал экземпляры ComplexNumber по содержимому полей re и im,
@@ -28,6 +30,20 @@ public class ComplexNumber {
     }
 
     // You code
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ComplexNumber that = (ComplexNumber) o;
+        return Double.compare(that.re, re) == 0 && Double.compare(that.im, im) == 0;
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(re, im);
+    }
 
     public double getRe() {
         return re;

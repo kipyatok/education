@@ -10,5 +10,29 @@ package lesson_two.oop;
  * <p>
  * Объект нельзя создать без имени или клички
  */
-public class Dog {
+public class Dog extends Animal {
+
+    private String masterName;
+
+    public Dog(String name) {
+        setName(name);
+    }
+
+    @Override
+    public void Voice() {
+        System.out.println("Собака " + getName() + " гавкает!");
+    }
+
+    @Override
+    public void Master(){
+        System.out.println(getMasterName() + " хозяин пёсика " + getName());
+    }
+
+    public String getMasterName() {
+        return masterName;
+    }
+
+    public void setMasterName(String masterName) {
+        this.masterName = masterName;
+    }
 }
