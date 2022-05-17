@@ -3,8 +3,6 @@ package lesson_one.arrays;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import java.util.Arrays;
-
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ArraysLesson {
 
@@ -28,19 +26,16 @@ public class ArraysLesson {
             return;
         }
         boolean chek = true;
-        StringBuilder positive = new StringBuilder();
+
         for (int i = 0; i < arrays.length; i++) {
             if (arrays[i] >= 0) { //
                 chek = false;
-                positive.append(arrays[i] + "\n");
+                System.out.println(arrays[i]);
             }
         }
         if (chek) {
             System.out.println("Массив отрицательный");
-            return;
         }
-
-        System.out.print(positive);
     }
 
 

@@ -20,7 +20,7 @@ public class LessonBook implements Book {
 
     @Override
     public String textByPage(int page) {
-        if ((page >= book.length) || (page < 0)) {
+        if ((page >= book.length) || (page < 0)) { // fixme use implemented methods
             return "";
         }
         return book[page];
@@ -28,7 +28,7 @@ public class LessonBook implements Book {
 
     @Override
     public String textByRange(int start, int end) {
-        if ((start > book.length) || (start < 0) || (start > end) || (end < 0) || (end > book.length)) {
+        if ((start > book.length) || (start < 0) || (start > end) || (end < 0) || (end > book.length)) { // fixme use implemented methods
             return "";
         }
 
@@ -42,7 +42,7 @@ public class LessonBook implements Book {
     @Override
     public int findPageByText(String text) {
         for (int i = 0; i < book.length; i++) {
-            if (book[i].indexOf(text) > -1) { // fixme use constaine
+            if (book[i].indexOf(text) > -1) { // fixme use constains
                 return i;
             }
         }
@@ -51,16 +51,17 @@ public class LessonBook implements Book {
 
     @Override
     public String text() {
-        if (book.length < 1) {
+        if (book.length < 1) { // fixme use length == 0
             return "";
         }
 
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < book.length; i++) { // fixme use foreach
+
+        for (int i = 0; i < book.length; i++) { // fixme use maybe foreach
             result.append(book[i]);
         }
-        return result.toString();
 
+        return result.toString();
     }
 
     public LessonBook(String[] book) {
@@ -72,5 +73,5 @@ public class LessonBook implements Book {
 
     public void setBook(String[] book) {
         this.book = book;
-    }
+    } // fixme ?
 }
