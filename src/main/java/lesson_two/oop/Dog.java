@@ -16,7 +16,7 @@ public class Dog extends Animal {
 
     public Dog(String name) {
         setName(name);
-    }
+    } //fixme wrong, use super
 
     @Override
     public void Voice() {

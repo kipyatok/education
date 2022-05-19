@@ -9,7 +9,7 @@ package lesson_two.oop;
 public class Polymorphism {
 
     public static void main(String[] args) {
-        Cat tigra = new Cat("Тигра");
+        Cat tigra = new Cat("Тигра"); // fixme use polymorphism Animal tigra = ...
         Dog flint = new Dog("Флинт");
         tigra.setSlaveName("Даня");
         flint.setMasterName("Сиёга");

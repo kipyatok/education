@@ -12,11 +12,11 @@ package lesson_two.oop;
  */
 public class Cat extends Animal {
 
-    String slaveName;
+    String slaveName; //fixme need ?
 
     public Cat(String name) {
         setName(name);
-    }
+    } //fixme wrong, use super
 
     @Override
     public void Voice() {

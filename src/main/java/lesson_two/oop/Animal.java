@@ -7,12 +7,11 @@ package lesson_two.oop;
  * <p>
  * Сделать метод отвещающий за голос, по умолчанию он выводит на экран: Голос
  */
-public class Animal {
+public class Animal { //fixme maybe abstact for extends ?
     private String name;
     private int age;
     private int weight;
     private String color;
-
 
     public String getName() {
         return name;
