@@ -12,11 +12,11 @@ package lesson_two.oop;
  */
 public class Cat extends Animal {
 
-    String slaveName; //fixme need ?
+    private String slaveName; //fixme need ? (Добавить поля которые могут быть только у данного класса)
 
     public Cat(String name) {
-        setName(name);
-    } //fixme wrong, use super or this
+        this.setName(name);
+    }
 
     @Override
     public void Voice() {
