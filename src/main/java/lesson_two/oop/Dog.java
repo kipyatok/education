@@ -14,7 +14,7 @@ public class Dog extends Animal {
 
     private String masterName;
 
-    public Dog(String name) {
+    public Dog(String name) { // fixme call super
         this.setName(name);
     }
 
