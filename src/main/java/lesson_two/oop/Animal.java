@@ -47,9 +47,9 @@ public abstract class Animal { //fixme maybe abstact for extends ?
 
     public void Voice(){
         System.out.println("Голос");
-    } //fixme protected and rename method
+    }
 
     public void Master(){
         System.out.println("Хозяин");
-    } // fixme protected
+    }
 }

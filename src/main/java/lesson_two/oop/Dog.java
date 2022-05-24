@@ -12,7 +12,7 @@ package lesson_two.oop;
  */
 public class Dog extends Animal {
 
-    private String masterName;
+    private int lengthOfLid;
 
     public Dog(String name) { // fixme call super
         this.setName(name);
@@ -23,16 +23,11 @@ public class Dog extends Animal {
         System.out.println("Собака " + getName() + " гавкает!");
     }
 
-    @Override
-    public void Master(){
-        System.out.println(getMasterName() + " хозяин пёсика " + getName());
+    public int getLengthOfLid() {
+        return lengthOfLid;
     }
 
-    public String getMasterName() {
-        return masterName;
-    }
-
-    public void setMasterName(String masterName) {
-        this.masterName = masterName;
+    public void setLengthOfLid(int lengthOfLid) {
+        this.lengthOfLid = lengthOfLid;
     }
 }

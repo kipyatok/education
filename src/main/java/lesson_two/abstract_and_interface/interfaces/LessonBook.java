@@ -1,5 +1,7 @@
 package lesson_two.abstract_and_interface.interfaces;
 
+import java.math.BigInteger;
+
 /**
  * Реализиовать класс LessonBook который должен описывать интерфейс Book
  * Абстрактной работы с книгой, книга представлена в виде массива String, где индекс это страница, а значение это текст.
@@ -11,7 +13,7 @@ package lesson_two.abstract_and_interface.interfaces;
  * Если ничего не нашлось то возвращем для int -1, для String "";
  */
 public class LessonBook implements Book {
-    private String book[]; // fixme String[] book
+    private String [] book;
 
     @Override
     public int sizeBook() {
@@ -20,7 +22,7 @@ public class LessonBook implements Book {
 
     @Override
     public String textByPage(int page) {
-        if ((page >= book.length) || (page < 0)) { // fixme use implemented methods
+        if ((page >= sizeBook()) || (page < 0)) {
             return "";
         }
         return book[page];
@@ -28,7 +30,7 @@ public class LessonBook implements Book {
 
     @Override
     public String textByRange(int start, int end) {
-        if ((start > book.length) || (start < 0) || (start > end) || (end < 0) || (end > book.length)) { // fixme use implemented methods
+        if ((start > sizeBook()) || (start < 0) || (start > end) || (end < 0) || (end > sizeBook())) {
             return "";
         }
 
@@ -42,7 +44,7 @@ public class LessonBook implements Book {
     @Override
     public int findPageByText(String text) {
         for (int i = 0; i < book.length; i++) {
-            if (book[i].indexOf(text) > -1) { // fixme use constains
+            if (book[i].indexOf(text) >= BigInteger.ZERO.intValue()) {
                 return i;
             }
         }
@@ -51,27 +53,27 @@ public class LessonBook implements Book {
 
     @Override
     public String text() {
-        if (book.length < 1) { // fixme use length == 0
+        if (book.length == 0) {
             return "";
         }
 
         StringBuilder result = new StringBuilder();
 
-        for (int i = 0; i < book.length; i++) { // fixme use maybe foreach
-            result.append(book[i]);
+        for (String page : book) {
+            result.append(page);
         }
 
         return result.toString();
     }
 
+
     public LessonBook(String[] book) {
         this.book = book;
     }
 
-    public LessonBook() {
-    }
+    public LessonBook() {}
 
     public void setBook(String[] book) {
         this.book = book;
-    } // fixme ?
+    } // конструктор с аргументом + пустой конструктор с сетером
 }

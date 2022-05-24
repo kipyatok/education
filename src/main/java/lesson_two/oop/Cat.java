@@ -12,7 +12,7 @@ package lesson_two.oop;
  */
 public class Cat extends Animal {
 
-    private String slaveName; //fixme need ? (Добавить поля которые могут быть только у данного класса)
+    private String colorOfTray;
 
     public Cat(String name) {
         this.setName(name);
@@ -23,16 +23,11 @@ public class Cat extends Animal {
         System.out.println("Кошка " + getName() + " мяукает!");
     }
 
-    @Override
-    public void Master(){
-        System.out.println(getSlaveName() + " раб кота " + getName());
+    public String getColorOfTray() {
+        return colorOfTray;
     }
 
-    public String getSlaveName(){
-        return slaveName;
-    }
-
-    public void setSlaveName(String slaveName){
-        this.slaveName = slaveName;
+    public void setColorOfTray(String colorOfTray) {
+        this.colorOfTray = colorOfTray;
     }
 }
