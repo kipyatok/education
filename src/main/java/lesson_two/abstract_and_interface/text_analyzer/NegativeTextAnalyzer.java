@@ -1,6 +1,7 @@
 package lesson_two.abstract_and_interface.text_analyzer;
 
 import static lesson_two.abstract_and_interface.text_analyzer.Label.NEGATIVE_TEXT;
+import static lesson_two.abstract_and_interface.text_analyzer.Label.OK;
 
 public class NegativeTextAnalyzer  extends KeywordAnalyzer implements TextAnalyzer{
 
@@ -17,6 +18,11 @@ public class NegativeTextAnalyzer  extends KeywordAnalyzer implements TextAnalyz
 
     @Override
     public Label processText(String text) {
-        return null;
+        for (int i = 0; i < getKeywords().length; i++) {
+            if(text.indexOf(getKeywords()[i]) >= 0){
+                return getLabel();
+            }
+        }
+        return OK;
     }
 }
