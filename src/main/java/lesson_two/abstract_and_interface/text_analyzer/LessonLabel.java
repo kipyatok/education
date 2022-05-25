@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 public class LessonLabel {
 
     public static Label checkLabels(TextAnalyzer[] analyzers, String text) {
-        //You code
+        
+
         return Label.OK;
     }
 }

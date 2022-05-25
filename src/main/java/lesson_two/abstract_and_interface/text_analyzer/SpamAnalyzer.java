@@ -2,26 +2,21 @@ package lesson_two.abstract_and_interface.text_analyzer;
 
 import static lesson_two.abstract_and_interface.text_analyzer.Label.SPAM;
 
-public class SpamAnalyzer extends KeywordAnalyzer implements TextAnalyzer { //fixme remove implements
+public class SpamAnalyzer extends KeywordAnalyzer {
 
     private String[] keywords;
 
-    public SpamAnalyzer(String[] keyWords){ //fixme rename keyWords -> keywords
-        this.keywords = keyWords;
+    SpamAnalyzer(String[] keywords){
+        this.keywords = keywords;
     }
 
     @Override
     protected String[] getKeywords() {
-        return this.keywords;
+        return keywords;
     }
 
     @Override
     protected Label getLabel() {
         return SPAM;
-    }
-
-    @Override
-    public Label processText(String text) { // fixme remove, implementation should be in KeywordAnalyzer
-        return null;
     }
 }
