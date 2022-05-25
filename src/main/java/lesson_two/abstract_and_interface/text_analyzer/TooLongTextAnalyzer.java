@@ -11,5 +11,5 @@ public class TooLongTextAnalyzer implements TextAnalyzer {
     @Override
     public Label processText(String text) {
         return null;
-    }
+    } //fixme add logic
 }
