@@ -7,15 +7,12 @@ import lombok.NoArgsConstructor;
 public class LessonLabel {
 
     public static Label checkLabels(TextAnalyzer[] analyzers, String text) {
-        if(!analyzers[0].processText(text).equals(Label.OK)){
-            return analyzers[0].processText(text);
-        }
-        if(!analyzers[1].processText(text).equals(Label.OK)){
-            return analyzers[1].processText(text);
-        }
-        if(!analyzers[2].processText(text).equals(Label.OK)){
-            return analyzers[2].processText(text);
+        for (int i = 0; i < analyzers.length; i++) {
+            if(!analyzers[i].processText(text).equals(Label.OK)){
+                return analyzers[i].processText(text);
+            }
         }
         return Label.OK;
     }
 }
+

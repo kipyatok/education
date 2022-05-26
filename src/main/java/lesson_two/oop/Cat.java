@@ -15,8 +15,8 @@ public class Cat extends Animal {
     private String colorOfTray;
 
     public Cat(String name) {
-        this.setName(name);
-    } // fixme call super()
+        super.setName(name);
+    }
 
     @Override
     public void Voice() {

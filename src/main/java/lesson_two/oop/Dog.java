@@ -14,8 +14,8 @@ public class Dog extends Animal {
 
     private int lengthOfLid;
 
-    public Dog(String name) { // fixme call super
-        this.setName(name);
+    public Dog(String name) {
+        super.setName(name);
     }
 
     @Override

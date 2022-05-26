@@ -7,7 +7,7 @@ package lesson_two.oop;
  * <p>
  * Сделать метод отвещающий за голос, по умолчанию он выводит на экран: Голос
  */
-public abstract class Animal { //fixme maybe abstact for extends ?
+public abstract class Animal {
     private String name;
     private int age;
     private int weight;
@@ -49,7 +49,4 @@ public abstract class Animal { //fixme maybe abstact for extends ?
         System.out.println("Голос");
     }
 
-    public void Master(){
-        System.out.println("Хозяин");
-    }
 }
