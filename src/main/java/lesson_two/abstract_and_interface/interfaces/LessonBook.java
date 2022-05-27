@@ -13,7 +13,7 @@ import java.math.BigInteger;
  * Если ничего не нашлось то возвращем для int -1, для String "";
  */
 public class LessonBook implements Book {
-    private String [] book;
+    private String[] book;
 
     @Override
     public int sizeBook() {
@@ -43,8 +43,8 @@ public class LessonBook implements Book {
 
     @Override
     public int findPageByText(String text) {
-        for (int i = 0; i < book.length; i++) {
-            if (book[i].indexOf(text) >= BigInteger.ZERO.intValue()) {
+        for (int i = 0; i < book.length; i++) { // fixme use foreach
+            if (book[i].indexOf(text) >= BigInteger.ZERO.intValue()) { // ??? fixme use contains
                 return i;
             }
         }
@@ -53,7 +53,7 @@ public class LessonBook implements Book {
 
     @Override
     public String text() {
-        if (book.length == 0) {
+        if (book.length == 0) { // fixme getSizeBook
             return "";
         }
 

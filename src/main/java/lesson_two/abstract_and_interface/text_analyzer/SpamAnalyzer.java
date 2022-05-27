@@ -8,15 +8,15 @@ public class SpamAnalyzer extends KeywordAnalyzer {
 
     SpamAnalyzer(String[] keywords){
         this.keywords = keywords;
-    }
+    } //fixme public
 
     @Override
     protected String[] getKeywords() {
         return keywords;
-    }
+    } //fixme public
 
     @Override
     protected Label getLabel() {
         return SPAM;
-    }
+    } //fixme public
 }

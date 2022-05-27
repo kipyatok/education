@@ -15,13 +15,13 @@ public class Cat extends Animal {
     private String colorOfTray;
 
     public Cat(String name) {
-        super.setName(name);
+        super.setName(name); // fixme super(name);
     }
 
     @Override
     public void Voice() {
         System.out.println("Кошка " + getName() + " мяукает!");
-    }
+    } // fixme rename
 
     public String getColorOfTray() {
         return colorOfTray;
