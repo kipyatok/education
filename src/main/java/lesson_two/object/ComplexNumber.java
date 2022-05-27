@@ -33,22 +33,21 @@ public class ComplexNumber {
 
 
     @Override
-    public boolean equals(Object o) { //fixme wrong
-        // see https://www.baeldung.com/java-equals-hashcode-contracts
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object o) {
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
         ComplexNumber that = (ComplexNumber) o;
         return Double.compare(that.re, re) == 0 && Double.compare(that.im, im) == 0;
     }
 
-
     @Override
     public int hashCode() {
-        return Objects.hash(re, im);
-    } //fixme wrong
-    //https://www.baeldung.com/java-hashcode see standard hashcode
-
-    public double getRe() {
-        return re;
+        double result = ((re + im) * 31.0) * 29.0;
+        return (int) result;
     }
 
     public void setRe(double re) {
