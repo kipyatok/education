@@ -47,6 +47,6 @@ public abstract class Animal {
 
     public void Voice(){
         System.out.println("Голос");
-    }
+    } // fixme rename
 
 }

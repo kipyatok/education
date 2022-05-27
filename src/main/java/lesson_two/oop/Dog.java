@@ -16,12 +16,12 @@ public class Dog extends Animal {
 
     public Dog(String name) {
         super.setName(name);
-    }
+    } //fixme super(name)
 
     @Override
     public void Voice() {
         System.out.println("Собака " + getName() + " гавкает!");
-    }
+    } //fixme rename
 
     public int getLengthOfLid() {
         return lengthOfLid;
