@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 public class LessonLabel {
 
     public static Label checkLabels(TextAnalyzer[] analyzers, String text) {
-        for (int i = 0; i < analyzers.length; i++) { //fixme use foreach
-            if(!analyzers[i].processText(text).equals(Label.OK)){
-                return analyzers[i].processText(text);
+        for(TextAnalyzer num : analyzers){
+            if(!num.processText(text).equals(Label.OK)){
+                return num.processText(text);
             }
         }
         return Label.OK;

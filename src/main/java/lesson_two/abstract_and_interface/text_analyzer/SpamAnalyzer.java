@@ -6,17 +6,17 @@ public class SpamAnalyzer extends KeywordAnalyzer {
 
     private String[] keywords;
 
-    SpamAnalyzer(String[] keywords){
+    public SpamAnalyzer(String[] keywords){
         this.keywords = keywords;
-    } //fixme public
+    }
 
     @Override
-    protected String[] getKeywords() {
+    public String[] getKeywords() {
         return keywords;
-    } //fixme public
+    }
 
     @Override
-    protected Label getLabel() {
+    public Label getLabel() {
         return SPAM;
-    } //fixme public
+    }
 }

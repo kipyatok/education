@@ -15,13 +15,13 @@ public class Dog extends Animal {
     private int lengthOfLid;
 
     public Dog(String name) {
-        super.setName(name);
-    } //fixme super(name)
+        super(name);
+    }
 
     @Override
-    public void Voice() {
+    public void voice() {
         System.out.println("Собака " + getName() + " гавкает!");
-    } //fixme rename
+    }
 
     public int getLengthOfLid() {
         return lengthOfLid;

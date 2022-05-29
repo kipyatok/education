@@ -45,8 +45,11 @@ public abstract class Animal {
         this.color = color;
     }
 
-    public void Voice(){
+    public void voice(){
         System.out.println("Голос");
-    } // fixme rename
+    }
 
+    public Animal(String name){
+        setName(name);
+    }
 }

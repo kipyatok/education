@@ -43,17 +43,19 @@ public class LessonBook implements Book {
 
     @Override
     public int findPageByText(String text) {
-        for (int i = 0; i < book.length; i++) { // fixme use foreach
-            if (book[i].indexOf(text) >= BigInteger.ZERO.intValue()) { // ??? fixme use contains
-                return i;
+        int index = 0;
+        for(String word : book){
+            if(word.contains(text)){
+                return index;
             }
+            index++;
         }
         return -1;
     }
 
     @Override
     public String text() {
-        if (book.length == 0) { // fixme getSizeBook
+        if (sizeBook() == 0) {
             return "";
         }
 
@@ -62,7 +64,6 @@ public class LessonBook implements Book {
         for (String page : book) {
             result.append(page);
         }
-
         return result.toString();
     }
 

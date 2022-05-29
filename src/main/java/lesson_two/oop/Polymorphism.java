@@ -11,7 +11,7 @@ public class Polymorphism {
     public static void main(String[] args) {
         Animal tigra = new Cat("Тигра");
         Animal flint = new Dog("Флинт");
-        tigra.Voice();
-        flint.Voice();
+        tigra.voice();
+        flint.voice();
     }
 }
