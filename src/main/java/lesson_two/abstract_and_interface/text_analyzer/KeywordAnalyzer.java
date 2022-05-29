@@ -9,8 +9,8 @@ public abstract class KeywordAnalyzer implements TextAnalyzer {
     protected abstract Label getLabel();
 
     public Label processText(String text) {
-        for (int i = 0; i < getKeywords().length; i++) { // fixme use foreach
-            if(text.indexOf(getKeywords()[i]) >= 0){ //fixme use contains
+        for(String word : getKeywords()){
+            if(text.contains(word)){
                 return getLabel();
             }
         }
