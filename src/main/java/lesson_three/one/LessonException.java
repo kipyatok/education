@@ -2,6 +2,11 @@ package lesson_three.one;
 
 import helper.client.Client;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+import static java.math.BigDecimal.*;
+
 /**
  * Данный класc научит бросать исключения
  */
@@ -11,8 +16,8 @@ public class LessonException {
      * Реализовать метод который говорит о том что может бросить проверяемое исключение Exception
      * и бросает его с сообщением : Могу же!
      */
-    public void testThrowException() {
-        // You code
+    public void testThrowException() throws Exception {
+        throw new Exception("Могу же!");
     }
 
     /**
@@ -20,9 +25,13 @@ public class LessonException {
      * В отличие от Math.sqrt(), это метод при передаче отрицательного параметра должен бросать исключение java.lang.IllegalArgumentException
      * с сообщением "Negative number received : ?", где вместо вопросика будет подставлено фактически переданное в метод число.
      */
-    public double sqrt(double x) {
-        // You code
-        return 0;
+    public double sqrt(double x) throws IllegalArgumentException {
+        if (x < 0) {
+            throw new IllegalArgumentException("Negative number received : " + x);
+        }
+        double result = 0;
+        result = Math.sqrt(x);
+        return result;
     }
 
     /**
@@ -41,10 +50,14 @@ public class LessonException {
      * Для удобствa используй статические методы Objects
      * И для вывода сообщения String.format
      */
-    public String messageBirthdayGreetings(Client client) {
-        // You code
-        return null;
+    public String messageBirthdayGreetings(Client client) throws IllegalArgumentException {
+        if (client == null) {
+            throw new IllegalArgumentException("Client object is null");
+        }
+        if (client.getBirthdate() == null) {
+            throw new IllegalArgumentException("Client birthdate is not correct");
+        }
+        return String.format("Dear " + client.getFirstName() + " " + client.getLastName() + ", happy birthday to you!");
     }
-
 }
 
