@@ -46,7 +46,7 @@ public class ComplexNumber {
 
     @Override
     public int hashCode() {
-        double result = ((re + im) * 31.0) * 29.0;
+        double result = ((re + im) * 31.0) * 29.0; //fixme
         return (int) result;
     }
 
