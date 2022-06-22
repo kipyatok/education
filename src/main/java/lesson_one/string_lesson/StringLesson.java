@@ -19,7 +19,11 @@ public class StringLesson {
      в классе String есть методы для преобразования всей строки в верхний и нижний регистр.
      */
     public static boolean isPalindrome(String text) {
-        return false;
+        text = text.replaceAll("[^a-zA-Z0-9]", "");
+
+        StringBuilder sb = new StringBuilder(text);
+
+        return text.equalsIgnoreCase(sb.reverse().toString());
     }
 
     /**
@@ -85,6 +89,17 @@ public class StringLesson {
      */
 
     public static String printTextPerRole(String[] roles, String[] textLines) {
-        return null;
+        StringBuilder result = new StringBuilder();
+
+        for (String role : roles) {
+            result.append(role + ":\n");
+            for (int i = 0; i < textLines.length; i++) {
+                if (textLines[i].startsWith(role + ":")) {
+                    result.append((i + 1) + ")" + textLines[i].substring(role.length() + 1) + "\n");
+                }
+            }
+            result.append("\n");
+        }
+        return result.toString();
     }
 }

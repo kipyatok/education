@@ -10,7 +10,10 @@ public class ControlStructures {
 
     /** Реализовать метод возращающий максимальное число, если числа равны вернуть -1, использовать if */
     public static int max(int a, int b) {
-        return 0;
+        if (a == b) {
+            return -1;
+        }
+        return Math.max(a, b);
     }
 
     /** Реализовать метод который будет возращать полное название странны
@@ -20,12 +23,30 @@ public class ControlStructures {
         Использовать Switch
      */
     public static String fullNameCountry(String country) {
-        return null;
+
+        switch (country) {
+            case "RU":
+                return "Russia";
+            case "IT":
+                return "Italy";
+            case "DE":
+                return "Germany";
+        }
+
+        return "Not country";
     }
 
     /** Реализовать метод который переворачить число используя цикл while */
     public static int reverse(int number) {
-        return 0;
+        int reversed = 0;
+
+        while (number != 0) {
+            int numeral = number % 10;
+            reversed = reversed * 10 + numeral;
+            number /= 10;
+        }
+
+        return reversed;
     }
 
     /** Реализовать метод который будет считать овец
@@ -37,11 +58,27 @@ public class ControlStructures {
         "n овца..."
      */
     public static void countingSheep(int n) {
-        // You code
+        if (n < 0) {
+            System.out.print("Овцы так не считаются\n");
+        }
+
+        int i = 1;
+
+        while (i <= n) {
+            System.out.print(i + " овца...\n");
+            i = i + 1;
+        }
     }
 
     /** Реализовать метод вычисления факториала, число на выходе может быть больше размерности int */
     public static BigInteger factorial(int value) {
-        return BigInteger.ONE;
+        BigInteger factorial = BigInteger.valueOf(1);
+
+        while (value != 0) {
+            factorial = factorial.multiply(BigInteger.valueOf(value));
+            value -= 1;
+        }
+
+        return factorial;
     }
 }
