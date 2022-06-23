@@ -22,14 +22,15 @@ public class ArraysLesson {
      */
     public static void bringToTheScreenArrays(int[] arrays) {
 
-        int arrayLength = arrays.length;
-        int i;
+        int arrayLength = arrays.length; //fixme remove
+        int i; // fixme remove
 
-        if (arrayLength == 0) {
+        if (arrayLength == 0) { // fixme use arrays.length
             System.out.println("Пустой массив");
-        } else {
+            // fixme add return;
+        } else { //  fixme remove else
 
-            int numberOfNegativeNumbers = 0;
+            int numberOfNegativeNumbers = 0; // fixme use boolean flag
 
             for (i = 0; i < arrayLength; i++) {
                 if (arrays[i] < 0) {
@@ -39,9 +40,10 @@ public class ArraysLesson {
 
             if (numberOfNegativeNumbers == arrays.length) {
                 System.out.println("Массив отрицательный");
+                // fixme use return
             } else {
                 for (i = 0; i < arrayLength; i++) {
-                    if (arrays[i] > 0) {
+                    if (arrays[i] > 0) { // fixme remove, use other logic
                         System.out.println(arrays[i]);
                     }
                 }
@@ -56,16 +58,16 @@ public class ArraysLesson {
      */
     public static int[] notDuplicateArrays(int[] arrays) {
 
-        int length = arrays.length;
+        int length = arrays.length; // fixme remove
 
-        if (length == 0 || length == 1) {
-            int j = length;
+        if (length == 0 || length == 1) { // fixme use arrays.length
+            int j = length; // fixme remove
             return arrays;
         }
 
         boolean isSorted = false;
 
-        while(isSorted != true) {
+        while(isSorted != true) { // fixme !isSorted
             isSorted = true;
             for (int i = 1; i < arrays.length; i++) {
                 if (arrays[i] < arrays[i - 1]) {
@@ -143,7 +145,7 @@ public class ArraysLesson {
         return arrays;
     }
 
-    public static void quickSort(int[] array, int left, int right) {
+    public static void quickSort(int[] array, int left, int right) { // fixme private or package
         if (array.length == 0)
             return;
 

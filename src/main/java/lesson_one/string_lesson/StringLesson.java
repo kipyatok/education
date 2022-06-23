@@ -93,9 +93,10 @@ public class StringLesson {
 
         for (String role : roles) {
             result.append(role + ":\n");
-            for (int i = 0; i < textLines.length; i++) {
+            // fixme append must take at least one parameter, no string folding
+            for (int i = 0; i < textLines.length; i++) { //fixme use foreach
                 if (textLines[i].startsWith(role + ":")) {
-                    result.append((i + 1) + ")" + textLines[i].substring(role.length() + 1) + "\n");
+                    result.append((i + 1) + ")" + textLines[i].substring(role.length() + 1) + "\n"); //fixme must take at least one parameter, no string folding
                 }
             }
             result.append("\n");
