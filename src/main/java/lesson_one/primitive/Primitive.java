@@ -10,7 +10,7 @@ public class Primitive {
      * Вернуть сумму двух чисел
      */
     public static int sum(int a, int b) {
-        return a + b;
+        return a + b; // fixme
     }
 
     /**
