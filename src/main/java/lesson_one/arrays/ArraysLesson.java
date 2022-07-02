@@ -22,34 +22,31 @@ public class ArraysLesson {
      */
     public static void bringToTheScreenArrays(int[] arrays) {
 
-        int arrayLength = arrays.length; //fixme remove
-        int i; // fixme remove
-
-        if (arrayLength == 0) { // fixme use arrays.length
+        if (arrays.length == 0) {
             System.out.println("Пустой массив");
-            // fixme add return;
-        } else { //  fixme remove else
+            return;
+        }
 
-            int numberOfNegativeNumbers = 0; // fixme use boolean flag
+        int numberOfNegativeNumbers = 0; // fixme use boolean flag
 
-            for (i = 0; i < arrayLength; i++) {
-                if (arrays[i] < 0) {
-                    numberOfNegativeNumbers += 1;
-                }
+        for (int i = 0; i < arrays.length; i++) {
+            if (arrays[i] < 0) {
+                numberOfNegativeNumbers += 1;
             }
+        }
 
-            if (numberOfNegativeNumbers == arrays.length) {
-                System.out.println("Массив отрицательный");
-                // fixme use return
-            } else {
-                for (i = 0; i < arrayLength; i++) {
-                    if (arrays[i] > 0) { // fixme remove, use other logic
-                        System.out.println(arrays[i]);
-                    }
-                }
+        if (numberOfNegativeNumbers == arrays.length) {
+            System.out.println("Массив отрицательный");
+            return;
+        }
+        for (int i = 0; i < arrays.length; i++) {
+            if (arrays[i] > 0) { // fixme remove, use other logic
+                System.out.println(arrays[i]);
             }
         }
     }
+
+
 
     /** Реализовать метод возравщающий массив без дупликатов в нем, при пустом массиве вернуть пустой массив
        Примеры
@@ -58,16 +55,13 @@ public class ArraysLesson {
      */
     public static int[] notDuplicateArrays(int[] arrays) {
 
-        int length = arrays.length; // fixme remove
-
-        if (length == 0 || length == 1) { // fixme use arrays.length
-            int j = length; // fixme remove
+        if (arrays.length == 0 || arrays.length == 1) {
             return arrays;
         }
 
         boolean isSorted = false;
 
-        while(isSorted != true) { // fixme !isSorted
+        while(!isSorted) {
             isSorted = true;
             for (int i = 1; i < arrays.length; i++) {
                 if (arrays[i] < arrays[i - 1]) {
@@ -79,25 +73,23 @@ public class ArraysLesson {
             }
         }
 
-            int[] tempArray = new int[length];
+            int[] tempArray = new int[arrays.length];
             int j = 0;
 
-            for (int i = 0; i < length - 1; i++) {
+            for (int i = 0; i < arrays.length - 1; i++) {
                 if (arrays[i] != arrays[i + 1]) {
                     tempArray[j++] = arrays[i];
                 }
             }
-            tempArray[j++] = arrays[length - 1];
+            tempArray[j++] = arrays[arrays.length - 1];
 
             for (int i = 0; i < j; i++) {
                 arrays[i] = tempArray[i];
             }
 
-        int lengthResult = j;
+        int[] resultArrays = new int[j];
 
-        int[] resultArrays = new int[lengthResult];
-
-        for (int i = 0; i < lengthResult; i++) {
+        for (int i = 0; i < j; i++) {
             resultArrays[i] = arrays[i];
         }
 
@@ -145,7 +137,7 @@ public class ArraysLesson {
         return arrays;
     }
 
-    public static void quickSort(int[] array, int left, int right) { // fixme private or package
+    private static void quickSort(int[] array, int left, int right) {
         if (array.length == 0)
             return;
 
