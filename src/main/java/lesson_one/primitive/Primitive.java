@@ -24,9 +24,10 @@ public class Primitive {
          * Вернут сумму двух чисел, но вернуть надо int
          */
     public static int sumNumber(double a, double b) {
-        int c = (int) Math.round(a + b );
-        return a + b ;
-    }
+        int c = (int) Math.round( a );
+        int d = (int) Math.round( b );
+        return c + d ;
+    } // successful passed by the test. Supposed to be fixed
 
     /**
      * Вернуть что число является четным, математическим способом
