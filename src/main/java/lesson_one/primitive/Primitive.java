@@ -10,21 +10,22 @@ public class Primitive {
      * Вернуть сумму двух чисел
      */
     public static int sum(int a, int b) {
-        return a + b; // fixme
-    }
+        return a + b;
+    } // successful passed by the test
 
     /**
      * Вернуть разность двух чисел
      */
     public static double sub(double a, double b) {
-        return 0;
-    }
+        return a - b;
+    } // successful passed by the test
 
-    /**
-     * Вернут сумму двух чисел, но вернуть надо int
-     */
+        /**
+         * Вернут сумму двух чисел, но вернуть надо int
+         */
     public static int sumNumber(double a, double b) {
-        return 0;
+        int c = (int) Math.round(a + b );
+        return a + b ;
     }
 
     /**
