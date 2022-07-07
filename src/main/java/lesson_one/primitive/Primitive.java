@@ -32,10 +32,11 @@ public class Primitive {
     /**
      * Вернуть что число является четным, математическим способом
      */
-    public static boolean isEven(int number) ;
-    {
-        ((int number) % 2) == 0) ;
-        return true;
+    public static boolean isEven(int number ) {
+        if ( number % 2 == 0)
+            return true;
+        else
+            return false; // successful passed by the test (wasted 3 days)
     }
 
     /**
@@ -44,6 +45,7 @@ public class Primitive {
     public static char symbol(int number) {
         return '\u0000';
     }
+
 
     /**
      * Вернуть последнию цифру от числа
