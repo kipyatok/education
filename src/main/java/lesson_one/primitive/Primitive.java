@@ -32,8 +32,10 @@ public class Primitive {
     /**
      * Вернуть что число является четным, математическим способом
      */
-    public static boolean isEven(int number) {
-        return false;
+    public static boolean isEven(int number) ;
+    {
+        ((int number) % 2) == 0) ;
+        return true;
     }
 
     /**
