@@ -24,16 +24,16 @@ public class Primitive {
          * Вернут сумму двух чисел, но вернуть надо int
          */
     public static int sumNumber(double a, double b) {
-        int c = (int) Math.round( a );
+        int c = (int) Math.round( a ); //fixme ( a ) don't write like that -> (a)
         int d = (int) Math.round( b );
-        return c + d ;
+        return c + d ; // fixme see Java Type Casting , example double a = 1.0; int b = (int) a; This works on the +- operators as well.
     } // successful passed by the test. Supposed to be fixed
 
     /**
      * Вернуть что число является четным, математическим способом
      */
     public static boolean isEven(int number ) {
-        if ( number % 2 == 0)
+        if ( number % 2 == 0) // fixme return, remove if
             return true;
         else
             return false; // successful passed by the test (wasted 3 days)
