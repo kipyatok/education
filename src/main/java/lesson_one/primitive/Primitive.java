@@ -24,26 +24,47 @@ public class Primitive {
          * Вернут сумму двух чисел, но вернуть надо int
          */
     public static int sumNumber(double a, double b) {
-        int c = (int) Math.round( a ); //fixme ( a ) don't write like that -> (a)
-        int d = (int) Math.round( b );
-        return c + d ; // fixme see Java Type Casting , example double a = 1.0; int b = (int) a; This works on the +- operators as well.
-    } // successful passed by the test. Supposed to be fixed
+        int c = (int) ( a ); //fixme ( a ) don't write like that -> (a)
+        int d = (int) ( b );
+        int f = (c + d);
+        return f;
+    }
+        // fixme see Java Type Casting , example double a = 1.0; int b = (int) a; This works on the +- operators as well.
+    // I would fix  it, if it can be shorter! P.S thanks for your example and patience.
+
 
     /**
      * Вернуть что число является четным, математическим способом
      */
-    public static boolean isEven(int number ) {
-        if ( number % 2 == 0) // fixme return, remove if
-            return true;
-        else
-            return false; // successful passed by the test (wasted 3 days)
+    public static boolean isEven(int number) {
+
+
+        return ((number) % 2) == 0 ; // odd = false , even = true
+        // fixme return, remove if
+        // done
+
     }
 
     /**
      * Реализуйте метод, который возвращает букву, стоящую в таблице UNICODE после символа "\" (обратный слэш) на расстоянии a
      */
     public static char symbol(int number) {
-        return '\u0000';
+        char a = '\u041c';
+        int b = a;
+         b= (a + number);
+        char c= (char)b;
+
+
+
+                        /*
+                         char a = '\u041c' ;
+                         char a = (int)a;
+                        // int b= (a + number);
+                        / char c= (char)b;
+                        */
+
+        return c;
+       // return '\u0000';
     }
 
 
