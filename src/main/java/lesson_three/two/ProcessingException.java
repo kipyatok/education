@@ -1,7 +1,10 @@
 package lesson_three.two;
 
 import helper.client.Client;
+import helper.datasource.DataSourceConnection;
 import helper.datasource.DataSourceManager;
+import helper.datasource.exception.ClientNotFoundException;
+import helper.datasource.exception.DataSourceNotConnectedException;
 
 /**
  * Данный класc научит бросать исключения и обрабатывать их
@@ -15,7 +18,13 @@ public class ProcessingException {
      */
 
     public boolean isCaughtException() {
-        return true;
+        boolean check = false;
+        try {
+            doThrowException();
+        } catch (Exception e) {
+            check = true;
+        }
+        return check;
     }
 
     /**
@@ -41,8 +50,27 @@ public class ProcessingException {
      * DataSourceManager всегда есть и его не надо проверять на null
      */
     public Client getClient(DataSourceManager manager, long id) {
-        // You code
-        return null;
+        if (id < 0){
+            throw new IllegalArgumentException();
+        }
+        Client client = new Client();
+        try{
+            client = manager.getConnection().getClient(id);
+        } catch (DataSourceNotConnectedException e) {
+            e.printStackTrace();
+            return null;
+        } catch (ClientNotFoundException a){
+            System.out.println("Client by id [" + id + "] not found");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                manager.getConnection().close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return client;
     }
 
     /**
@@ -52,7 +80,7 @@ public class ProcessingException {
      */
 
     public Client getClientTryWithResource(DataSourceManager manager, long id) {
-        // You code
+
         return null;
     }
 
