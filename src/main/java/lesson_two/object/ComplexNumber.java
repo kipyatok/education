@@ -1,6 +1,8 @@
 package lesson_two.object;
 
 
+import lombok.EqualsAndHashCode;
+
 import java.util.Objects;
 
 /**
@@ -20,6 +22,7 @@ import java.util.Objects;
  * Если вы воспользовались помощью IDE, то разберитесь, что было сгенерировано и почему оно выглядит именно так.
  * Когда вас на собеседовании попросят на бумажке реализовать equals() и hashCode() для какого-нибудь простого класса, то среда разработки помочь не сможет.
  */
+@EqualsAndHashCode
 public class ComplexNumber {
     private double re;
     private double im;
@@ -46,7 +49,7 @@ public class ComplexNumber {
 
     @Override
     public int hashCode() {
-        double result = ((re + im) * 31.0) * 29.0;
+        double result = ((re + im) * 31.0) * 29.0; //fixme
         return (int) result;
     }
 
