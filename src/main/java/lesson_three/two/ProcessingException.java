@@ -50,35 +50,7 @@ public class ProcessingException {
      * <p>
      * DataSourceManager всегда есть и его не надо проверять на null
      */
-    public Client getClient(DataSourceManager manager, long id) {
-        if (id < 0) {
-            throw new IllegalArgumentException();
-        }
 
-        DataSourceConnection connection = null;
-        try {
-            connection = manager.getConnection();
-        } catch (DataSourceNotConnectedException e){
-            e.printStackTrace();
-            return null;
-        }catch (Exception b){
-            throw new DataSourceException(b.getMessage());
-        }
-
-        Client client = null;
-        try{
-            client = connection.getClient(id);
-        }catch (ClientNotFoundException c){
-            System.out.println("Client by id [" + id + "] not found");
-        }finally {
-            try {
-                connection.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return client;
-    }
 
     /**
      * Тоже самое что и выше но с использование try-with-resource
