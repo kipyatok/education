@@ -4,6 +4,7 @@ import helper.client.Client;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 
 import static java.math.BigDecimal.*;
 //fixme remove unnecessary imports
@@ -52,10 +53,10 @@ public class LessonException {
      * И для вывода сообщения String.format
      */
     public String messageBirthdayGreetings(Client client) throws IllegalArgumentException {
-        if (client == null) {
+        if (client == null) { // fixme better Objects.isNull()
             throw new IllegalArgumentException("Client object is null");
         }
-        if (client.getBirthdate() == null) {
+        if (client.getBirthdate() == null) { // fixme better Objects.isNull()
             throw new IllegalArgumentException("Client birthdate is not correct");
         }
         return String.format("Dear " + client.getFirstName() + " " + client.getLastName() + ", happy birthday to you!");
