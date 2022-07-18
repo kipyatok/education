@@ -76,7 +76,7 @@ public class ProcessingExceptionTest {
         assertGetClient_Exception(tryWithResource);
         assertGetClient_notFound(tryWithResource);
 
-        if (tryWithResource) {
+        if (!tryWithResource) {
             assertGetClient_IllegalArgument();
         } else {
             assertGetClientTryWithResource_IllegalArgument();
