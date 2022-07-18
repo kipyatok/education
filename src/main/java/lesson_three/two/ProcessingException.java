@@ -4,6 +4,7 @@ import helper.client.Client;
 import helper.datasource.DataSourceConnection;
 import helper.datasource.DataSourceManager;
 import helper.datasource.exception.ClientNotFoundException;
+import helper.datasource.exception.DataSourceException;
 import helper.datasource.exception.DataSourceNotConnectedException;
 
 /**
@@ -50,22 +51,28 @@ public class ProcessingException {
      * DataSourceManager всегда есть и его не надо проверять на null
      */
     public Client getClient(DataSourceManager manager, long id) {
-        if (id < 0){
+        if (id < 0) {
             throw new IllegalArgumentException();
         }
-        Client client = new Client();
-        try{
-            client = manager.getConnection().getClient(id);
-        } catch (DataSourceNotConnectedException e) {
+
+        DataSourceConnection connection = null;
+        try {
+            connection = manager.getConnection();
+        } catch (DataSourceNotConnectedException e){
             e.printStackTrace();
             return null;
-        } catch (ClientNotFoundException a){
+        }catch (Exception b){
+            throw new DataSourceException(b.getMessage());
+        }
+
+        Client client = null;
+        try{
+            client = connection.getClient(id);
+        }catch (ClientNotFoundException c){
             System.out.println("Client by id [" + id + "] not found");
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
+        }finally {
             try {
-                manager.getConnection().close();
+                connection.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -80,11 +87,53 @@ public class ProcessingException {
      */
 
     public Client getClientTryWithResource(DataSourceManager manager, long id) {
-
-        return null;
+        Client client = null;
+        try (DataSourceConnection connection = manager.getConnection()) {
+            if (id < 0){
+                throw new IllegalArgumentException();
+            }
+            client = connection.getClient(id);
+        } catch (DataSourceNotConnectedException d) {
+            d.printStackTrace();
+            return null;
+        }catch (Exception e) {
+            throw new DataSourceException(e.getMessage());
+        }
+        return client;
     }
 
     //todo used to testing, not implement
     void doThrowException() throws Exception {
     } // NOSONAR
 }
+
+/*
+        if (id < 0) {
+        throw new IllegalArgumentException();
+        }
+
+        Client client = new Client();
+
+        DataSourceConnection connection = null;
+
+        try {
+        connection = manager.getConnection();
+        client = connection.getClient(id);
+        } catch (DataSourceNotConnectedException e) {
+        e.printStackTrace();
+        return null;
+        } catch (ClientNotFoundException a) {
+        System.out.println("Client by id [" + id + "] not found");
+        } catch (Exception e) {
+        e.printStackTrace();
+        } finally {
+        try {
+        connection.close();
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
+
+        }
+        return client;
+
+        */
