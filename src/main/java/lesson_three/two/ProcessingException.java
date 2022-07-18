@@ -19,14 +19,12 @@ public class ProcessingException {
      */
 
     public boolean isCaughtException() {
-        boolean check = false; //fixme remove
         try {
             doThrowException();
-            // fixme add return
+            return false;
         } catch (Exception e) {
-            check = true; // fixme return at once
+            return true; 
         }
-        return check; //fixme remove
     }
 
     /**
@@ -51,7 +49,7 @@ public class ProcessingException {
      * <p>
      * DataSourceManager всегда есть и его не надо проверять на null
      */
-    public Client getClient(DataSourceManager manager, long id) { // fixme ReformatCode
+    public Client getClient(DataSourceManager manager, long id) {
         if (id < 0) {
             throw new IllegalArgumentException();
         }
@@ -59,28 +57,21 @@ public class ProcessingException {
         DataSourceConnection connection = null;
         try {
             connection = manager.getConnection();
-            //fixme add return client
-        } catch (DataSourceNotConnectedException e){
+            return connection.getClient(id);
+        } catch (DataSourceNotConnectedException e) {
             System.out.println(e.getMessage());
-            return null; // fixme remove
-        }catch (Exception b){
-            throw new DataSourceException(b.getMessage());
-        } // fixme add catch ClientNotFoundException
-
-        //fixme remove block code from
-        Client client = null;
-        try{
-            client = connection.getClient(id);
-        }catch (ClientNotFoundException c){ // fixme move
+        } catch (ClientNotFoundException c) {
             System.out.println("Client by id [" + id + "] not found");
-        }finally { // fixme move to line code 68
+        } catch (Exception b) {
+            throw new DataSourceException(b.getMessage());
+        } finally {
             try {
                 connection.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }// fixme to
-        return client; //fixme return null
+        }
+        return null;
     }
 
     /**
@@ -90,53 +81,20 @@ public class ProcessingException {
      */
 
     public Client getClientTryWithResource(DataSourceManager manager, long id) {
-        Client client = null; // fixme remove
+        if (id < 0) {
+            throw new IllegalArgumentException();
+        }
         try (DataSourceConnection connection = manager.getConnection()) {
-            if (id < 0){ // fixme take away from try
-                throw new IllegalArgumentException();
-            }
-            client = connection.getClient(id); // fixme return at once
+            return connection.getClient(id);
         } catch (DataSourceNotConnectedException d) {
             d.printStackTrace();
             return null;
-        }catch (Exception e) {
+        } catch (Exception e) {
             throw new DataSourceException(e.getMessage());
         }
-        return client; // fixme return null
     }
 
     //todo used to testing, not implement
     void doThrowException() throws Exception {
     } // NOSONAR
 }
-// fixme remove comments
-/*
-        if (id < 0) {
-        throw new IllegalArgumentException();
-        }
-
-        Client client = new Client();
-
-        DataSourceConnection connection = null;
-
-        try {
-        connection = manager.getConnection();
-        client = connection.getClient(id);
-        } catch (DataSourceNotConnectedException e) {
-        e.printStackTrace();
-        return null;
-        } catch (ClientNotFoundException a) {
-        System.out.println("Client by id [" + id + "] not found");
-        } catch (Exception e) {
-        e.printStackTrace();
-        } finally {
-        try {
-        connection.close();
-        } catch (Exception e) {
-        e.printStackTrace();
-        }
-
-        }
-        return client;
-
-        */
