@@ -92,7 +92,7 @@ public class ProcessingException {
     public Client getClientTryWithResource(DataSourceManager manager, long id) {
         Client client = null; // fixme remove
         try (DataSourceConnection connection = manager.getConnection()) {
-            if (id < 0){
+            if (id < 0){ // fixme take away from try
                 throw new IllegalArgumentException();
             }
             client = connection.getClient(id); // fixme return at once
