@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Objects;
 
-import static java.math.BigDecimal.*;
-//fixme remove unnecessary imports
 
 /**
  * Данный класc научит бросать исключения
@@ -31,9 +29,7 @@ public class LessonException {
         if (x < 0) {
             throw new IllegalArgumentException("Negative number received : " + x);
         }
-        double result = 0;
-        result = Math.sqrt(x); // fixme return at once
-        return result;
+        return Math.sqrt(x);
     }
 
     /**
@@ -53,10 +49,10 @@ public class LessonException {
      * И для вывода сообщения String.format
      */
     public String messageBirthdayGreetings(Client client) throws IllegalArgumentException {
-        if (client == null) { // fixme better Objects.isNull()
+        if (Objects.isNull(client)) {
             throw new IllegalArgumentException("Client object is null");
         }
-        if (client.getBirthdate() == null) { // fixme better Objects.isNull()
+        if (Objects.isNull(client.getBirthdate())) {
             throw new IllegalArgumentException("Client birthdate is not correct");
         }
         return String.format("Dear " + client.getFirstName() + " " + client.getLastName() + ", happy birthday to you!");

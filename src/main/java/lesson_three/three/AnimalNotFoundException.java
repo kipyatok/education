@@ -2,7 +2,7 @@ package lesson_three.three;
 
 public class AnimalNotFoundException extends AnimalException{
 
-    private String name; // fixme add getter
+    private String name;
 
     public AnimalNotFoundException() {
     }
@@ -18,5 +18,9 @@ public class AnimalNotFoundException extends AnimalException{
 
     public AnimalNotFoundException(String message, Throwable cause) {
         super(message, cause);
+    }
+
+    public String getName(){
+        return  name;
     }
 }
