@@ -1,6 +1,6 @@
 package lesson_three.three;
 
-public class AnimalNotFoundException extends AnimalException{
+public class AnimalNotFoundException extends AnimalException {
 
     private String name;
 
@@ -11,7 +11,7 @@ public class AnimalNotFoundException extends AnimalException{
         super(message);
     }
 
-    public AnimalNotFoundException(String message, String name){
+    public AnimalNotFoundException(String message, String name) {
         super(message);
         this.name = name;
     }
@@ -20,7 +20,7 @@ public class AnimalNotFoundException extends AnimalException{
         super(message, cause);
     }
 
-    public String getName(){
-        return  name;
+    public String getName() {
+        return name;
     }
 }

@@ -1,6 +1,6 @@
 package lesson_three.three;
 
-public class AnimalException extends Exception { //fixme use RuntimeException
+public class AnimalException extends RuntimeException {
     public AnimalException() {
     }
 
