@@ -2,7 +2,7 @@ package lesson_three.three;
 
 public class AnimalNotSupportedException extends AnimalException{
 
-    public Animal animal;
+    public Animal animal; // fixme private
 
     public AnimalNotSupportedException() {
     }
