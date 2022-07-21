@@ -1,5 +1,3 @@
-
-
 package lesson_three.three;
 
 public class AnimalNotSupportedException extends AnimalException{
